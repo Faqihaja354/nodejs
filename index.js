@@ -4,7 +4,10 @@ const koneksi = require('./config/database');
 const multer = require('multer')
 const path = require('path')
 const app = express();
-const port = 5000;
+const port = process.env.port || 5000;
+
+const cors = require('cors');
+app.use(cors());
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
